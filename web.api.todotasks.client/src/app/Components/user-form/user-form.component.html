@@ -1,0 +1,12 @@
+<div [hidden]="isShowtasksList">
+  <div class="row-field">
+    <label class="title-text">User ID: </label>
+    <input class="input-field" type="text" [(ngModel)]="userId">
+  </div>
+  <button type="submit" (click)="getUserTasks(userId)" [disabled]="userId == ''">Submit</button>
+  <button type="submit" (click)="createUser(userId)" [disabled]="userId == ''">Create User</button>
+</div>
+<div *ngIf="isShowtasksList">
+  <h1>{{userId}}</h1>
+  <app-tasks-list [taskList]="taskslist" [userId] ="userId"></app-tasks-list>
+</div>

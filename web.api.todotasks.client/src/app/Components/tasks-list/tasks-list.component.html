@@ -1,0 +1,15 @@
+<div class="task-list-wrapper">
+  <div *ngFor="let item of localTaskList" class="task-wrapper">
+    <div class="task-row">
+      <label class="title-text">{{item.title}}</label>
+      <span *ngIf="item.isOpen" class="fa  fa-chevron-up icon" (click)="changeOpen(item, false)" ></span>
+      <span *ngIf="!item.isOpen" class="fa  fa-chevron-down icon" (click)="changeOpen(item, true)"></span>
+      <span class="fa fa-trash-o icon" (click)="deleteTask(item.id)"></span>
+    </div>
+    <app-task-form [data]="item" (onChange)="updateTask(item, $event)" [hidden]="!item.isOpen"></app-task-form>
+  </div>
+</div>
+
+<button class="new-task-button" (click)="createNewTask()">New Task</button>
+
+

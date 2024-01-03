@@ -1,0 +1,19 @@
+<form [formGroup]="contactForm"  (ngSubmit)="onSubmit()">
+
+    <div class="row-field">
+      <label class="title-text" >Title: </label>
+      <input required class="input-field" name="title" type="text" formControlName="title">
+    </div>
+
+    <div class="row-field">
+      <label class="title-text" >Details: </label>
+      <input class="input-field" name="details" type="text" formControlName="details">
+    </div>
+
+    <div class="row-field">
+      <label class="title-text">Date of execution: </label>
+      <input required class="input-field" name="executionDate" type="date" formControlName="executionDate">
+    </div>
+
+    <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+</form>
