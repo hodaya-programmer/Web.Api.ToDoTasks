@@ -55,7 +55,7 @@ the project managet tasks list of the users
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/hodaya-programmer/Web.Api.ToDoTasks
 ```
 
 Go to the project directory
